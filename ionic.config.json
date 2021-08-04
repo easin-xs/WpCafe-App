@@ -1,0 +1,7 @@
+{
+  "name": "wpcafe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

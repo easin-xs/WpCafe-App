@@ -1,0 +1,26 @@
+.pagination-wrapper{
+    display: flex;
+    position: relative;
+    background-color: #fff;
+}
+
+.next-page {
+    margin-left: auto;
+}
+
+.prev-page {
+    margin-right: auto;
+}
+
+.page-banner-wrapper {
+    z-index: 1;
+    background-color: #fff;
+    display: flex;
+    align-items: center
+}
+
+.pagination-count {
+    margin-left: auto;
+    font-weight: bold;
+    margin-right: auto;
+}

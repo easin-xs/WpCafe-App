@@ -1,8 +1,9 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './components/pages/Home/Home';
+import Home from './components/pages/Home';
+import Releases from './components/pages/Releases';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -20,22 +21,13 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-/* Theme variables */
-import './theme/variables.css';
-
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/page/:id">
-          <Home />
-        </Route>
-        {/* <Route exact path="/">
-          <Redirect to="/home" />
-        </Route> */}
+        <Route exact path="/" component={Home} />
+        <Route exact path="/page/:id" component={Home} />
+        <Route exact path="/releases/:name" component={(props:any) => <Releases {...props} />} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

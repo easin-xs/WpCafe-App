@@ -1,4 +1,3 @@
-import React from 'react';
 import { IonSkeletonText } from '@ionic/react';
 
 const Skeleton = () => {

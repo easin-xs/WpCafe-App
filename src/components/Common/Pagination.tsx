@@ -1,19 +1,17 @@
-import { IonButton, IonIcon, IonContent, IonRouterLink } from '@ionic/react';
+import React, { FC } from 'react';
+import { IonButton, IonIcon, IonText} from '@ionic/react';
 import { arrowForward, arrowBack } from 'ionicons/icons';
-import React from 'react';
 
-const Pagination = () => {
+const Pagination: FC<{currentPage: number; updatePagination: any}> = ({currentPage, updatePagination}) => {
     return (
-        <div style={{display: 'flex'}} className="ion-flex ion-padding ion-justify-content-between">
-            <IonRouterLink href="/pages/2">
-                <IonButton fill="outline" disabled>Prev <IonIcon slot="start" icon={arrowBack} /></IonButton>
-            </IonRouterLink>
-
-            <IonRouterLink href="/page/3">
-                <IonButton fill="outline">Next <IonIcon slot="end" icon={arrowForward} /></IonButton>
-            </IonRouterLink>
+        <div className="pagination-wrapper ion-flex ion-padding ion-justify-content-between ion-align-items-center">
+            {currentPage > 1 && 
+                <IonButton className="prev-page" onClick={() => updatePagination((currentPage - 1))} fill="outline">Prev <IonIcon slot="start" icon={arrowBack} /></IonButton>
+            }
+            <IonText className="pagination-count">{`Page: ${currentPage}`}</IonText>
+            <IonButton className="next-page" onClick={() => updatePagination((currentPage + 1))} fill="outline">Next <IonIcon slot="end" icon={arrowForward} /></IonButton>
         </div>
     )
 }
 
-export default Pagination;
+export default React.memo(Pagination);

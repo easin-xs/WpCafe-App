@@ -1,0 +1,2 @@
+export const HomeApiLink = (pageNumber:any) => 'https://api.github.com/search/code?q=addClass+user:mozilla&per_page=5&page=' + pageNumber;
+export const ReleaseApiLink = (name:any) => 'https://api.github.com/repos/mozilla/'+ name +'/releases';
